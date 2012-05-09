@@ -31,11 +31,21 @@
 
 void InitOCLWorld();
 
-cl_uint oclGetPlatformNumber( cl_platform_id );
+cl_uint oclGetPlatformNumber();
+
+cl_uint oclGetDeviceNumber( cl_platform_id );
 
 char* oclGetPlatformName( cl_platform_id );
 
 char* oclGetPlatformVendor( cl_platform_id );
+
+char* oclGetDeviceName( cl_device_id );
+
+char* oclGetDeviceVendor( cl_device_id );
+
+char* oclGetDeviceVersion( cl_device_id );
+
+void oclInformationForDevice( cl_device_id );
 
 
 #endif /* CLUTILS_H_ */
