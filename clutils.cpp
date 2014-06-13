@@ -45,7 +45,7 @@ void InitOCLWorld()
 {
 	platformsNum = oclGetPlatformNumber();
 	
-	for (int i = 0 ; i < platformsNum ; i++) {
+	for (cl_uint i = 0 ; i < platformsNum ; i++) {
 		char* platformName = NULL;
 		char* platformVendor = NULL;
 		platformName = oclGetPlatformName(platforms[i]);
@@ -55,7 +55,7 @@ void InitOCLWorld()
 		printf("Vendor Name \t: %s \n",platformVendor);
 		
 		devicesNum = oclGetDeviceNumber(platforms[i]);
-		for(int j = 0 ; j < devicesNum ; j++){
+		for(cl_uint j = 0 ; j < devicesNum ; j++){
 			char* deviceName = NULL;
 			char* deviceVendor = NULL;
 			char* deviceVersion = NULL;
@@ -329,10 +329,10 @@ char* oclGetDeviceVersion(cl_device_id dev)
 
 void oclInformationForDevice(cl_device_id dev)
 {
-	cl_ulong devGlobalSize;
-	cl_ulong devLocalSize;
-	cl_ulong unitKB = 1024;
-	cl_ulong unitMB = 1048576;
+	unsigned long devGlobalSize;
+	unsigned long devLocalSize;
+	unsigned long unitKB = 1024;
+	unsigned long unitMB = 1048576;
 	
 	status = clGetDeviceInfo(dev,
 							 CL_DEVICE_GLOBAL_MEM_SIZE,

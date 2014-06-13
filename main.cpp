@@ -20,7 +20,7 @@
 
 #include "clutils.h"
 
-int main(int argc, char **argv)
+int main()
 {
 	
 	InitOCLWorld();
